@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "jpg-to-png",
+    "name": "JPG to PNG Converter",
+    "description": "Convert JPG images to PNG format instantly.",
+    "api": "https://api.example.com/convert/jpg-to-png"
+  },
+  {
+    "slug": "pdf-to-word",
+    "name": "PDF to Word Converter",
+    "description": "Convert PDFs to editable Word documents.",
+    "api": "https://api.example.com/convert/pdf-to-word"
+  }
+]

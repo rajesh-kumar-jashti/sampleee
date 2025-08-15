@@ -1,0 +1,36 @@
+.navbar__container{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 80%;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar__left{
+    display: flex;
+}
+
+.navbar__right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar__actions{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar__search{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
