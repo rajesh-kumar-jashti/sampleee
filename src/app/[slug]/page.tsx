@@ -1,16 +1,16 @@
 import tools from '../../data/tools.json';
 
-import { PageProps } from 'next';
-
-// Extend PageProps so it satisfies the Next.js constraint
-interface ToolPageProps extends PageProps {
-  params: {
+// Define the props interface for App Router dynamic pages
+interface ToolPageProps {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ToolPage({ params }: ToolPageProps) {
-  const tool = tools.find(t => t.slug === params.slug);
+export default async function ToolPage({ params }: ToolPageProps) {
+  // Await params in App Router (Next.js 15+)
+  const { slug } = await params;
+  const tool = tools.find(t => t.slug === slug);
 
   if (!tool) return <div>Tool not found</div>;
 
