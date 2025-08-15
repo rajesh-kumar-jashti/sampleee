@@ -1,7 +1,9 @@
 import tools from '../../data/tools.json';
 
+import { PageProps } from 'next';
 
-interface ToolPageProps {
+// Extend PageProps so it satisfies the Next.js constraint
+interface ToolPageProps extends PageProps {
   params: {
     slug: string;
   };
@@ -18,4 +20,11 @@ export default function ToolPage({ params }: ToolPageProps) {
       <p className="mb-4">{tool.description}</p>
     </div>
   );
+}
+
+// Pre-generate all slugs at build time (SSG)
+export async function generateStaticParams() {
+  return tools.map(tool => ({
+    slug: tool.slug,
+  }));
 }
