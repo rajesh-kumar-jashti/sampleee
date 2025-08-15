@@ -1,6 +1,13 @@
 import tools from '../../data/tools.json';
 
-export default function ToolPage({ params }: { params: { slug: string } }) {
+
+interface ToolPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function ToolPage({ params }: ToolPageProps) {
   const tool = tools.find(t => t.slug === params.slug);
 
   if (!tool) return <div>Tool not found</div>;
